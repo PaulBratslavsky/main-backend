@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_layout_section_headings",
+  "info": {
+    "displayName": "Section Heading"
+  },
+  "options": {},
+  "attributes": {
+    "preHeading": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}
