@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_elements_items",
+  "info": {
+    "displayName": "Item",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "CHECK"
+      ]
+    }
+  }
+}

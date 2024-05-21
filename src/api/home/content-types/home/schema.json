@@ -22,7 +22,13 @@
       "type": "dynamiczone",
       "components": [
         "layout.hero",
-        "layout.section-heading"
+        "layout.section-heading",
+        "layout.content-items",
+        "layout.content-image",
+        "layout.yt-video",
+        "layout.card-quote",
+        "layout.fa-qs",
+        "layout.cta"
       ]
     }
   }

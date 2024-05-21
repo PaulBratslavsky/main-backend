@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_layout_card_quotes",
+  "info": {
+    "displayName": "Card Quote",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "card": {
+      "displayName": "Card",
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.card"
+    }
+  }
+}

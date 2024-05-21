@@ -834,7 +834,18 @@ export interface ApiHomeHome extends Schema.SingleType {
   attributes: {
     title: Attribute.String;
     description: Attribute.String;
-    blocks: Attribute.DynamicZone<['layout.hero', 'layout.section-heading']>;
+    blocks: Attribute.DynamicZone<
+      [
+        'layout.hero',
+        'layout.section-heading',
+        'layout.content-items',
+        'layout.content-image',
+        'layout.yt-video',
+        'layout.card-quote',
+        'layout.fa-qs',
+        'layout.cta'
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -869,6 +880,38 @@ export interface ApiPagePage extends Schema.CollectionType {
   };
 }
 
+export interface ApiQuestionQuestion extends Schema.CollectionType {
+  collectionName: 'questions';
+  info: {
+    singularName: 'question';
+    pluralName: 'questions';
+    displayName: 'Question';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    question: Attribute.Text;
+    answer: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::question.question',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::question.question',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -890,6 +933,7 @@ declare module '@strapi/types' {
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
       'api::page.page': ApiPagePage;
+      'api::question.question': ApiQuestionQuestion;
     }
   }
 }
