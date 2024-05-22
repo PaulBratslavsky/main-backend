@@ -794,6 +794,7 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
     singularName: 'global';
     pluralName: 'globals';
     displayName: 'Global';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -802,6 +803,7 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
     title: Attribute.String;
     description: Attribute.Text;
     topnav: Attribute.Component<'layout.top-nav'>;
+    footer: Attribute.Component<'layout.footer'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -862,6 +864,7 @@ export interface ApiPagePage extends Schema.CollectionType {
     singularName: 'page';
     pluralName: 'pages';
     displayName: 'Page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -870,6 +873,21 @@ export interface ApiPagePage extends Schema.CollectionType {
     title: Attribute.String;
     description: Attribute.Text;
     slug: Attribute.UID<'api::page.page', 'title'>;
+    blocks: Attribute.DynamicZone<
+      [
+        'layout.card-quote',
+        'layout.content-image',
+        'layout.content-items',
+        'layout.cta',
+        'layout.fa-qs',
+        'layout.footer',
+        'layout.hero',
+        'layout.section-heading',
+        'layout.top-nav',
+        'layout.yt-video',
+        'layout.markdown'
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

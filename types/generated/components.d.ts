@@ -43,10 +43,23 @@ export interface ElementsLogoLink extends Schema.Component {
   collectionName: 'components_elements_logo_links';
   info: {
     displayName: 'Logo Link';
+    description: '';
   };
   attributes: {
     image: Attribute.Media;
     text: Attribute.String;
+    href: Attribute.String;
+  };
+}
+
+export interface ElementsSocialLinks extends Schema.Component {
+  collectionName: 'components_elements_social_links';
+  info: {
+    displayName: 'Social Links';
+  };
+  attributes: {
+    heading: Attribute.String;
+    socialLink: Attribute.Component<'elements.link', true>;
   };
 }
 
@@ -115,6 +128,20 @@ export interface LayoutFaQs extends Schema.Component {
   };
 }
 
+export interface LayoutFooter extends Schema.Component {
+  collectionName: 'components_layout_footers';
+  info: {
+    displayName: 'Footer';
+  };
+  attributes: {
+    logoLink: Attribute.Component<'elements.logo-link'>;
+    description: Attribute.Text;
+    colOneLinks: Attribute.Component<'elements.link', true>;
+    colTwoLinks: Attribute.Component<'elements.link', true>;
+    socialLinks: Attribute.Component<'elements.social-links'>;
+  };
+}
+
 export interface LayoutHero extends Schema.Component {
   collectionName: 'components_layout_heroes';
   info: {
@@ -125,6 +152,16 @@ export interface LayoutHero extends Schema.Component {
     text: Attribute.Text;
     cta: Attribute.Component<'elements.link'>;
     image: Attribute.Media;
+  };
+}
+
+export interface LayoutMarkdown extends Schema.Component {
+  collectionName: 'components_layout_markdowns';
+  info: {
+    displayName: 'Markdown';
+  };
+  attributes: {
+    markdown: Attribute.RichText;
   };
 }
 
@@ -173,12 +210,15 @@ declare module '@strapi/types' {
       'elements.item': ElementsItem;
       'elements.link': ElementsLink;
       'elements.logo-link': ElementsLogoLink;
+      'elements.social-links': ElementsSocialLinks;
       'layout.card-quote': LayoutCardQuote;
       'layout.content-image': LayoutContentImage;
       'layout.content-items': LayoutContentItems;
       'layout.cta': LayoutCta;
       'layout.fa-qs': LayoutFaQs;
+      'layout.footer': LayoutFooter;
       'layout.hero': LayoutHero;
+      'layout.markdown': LayoutMarkdown;
       'layout.section-heading': LayoutSectionHeading;
       'layout.top-nav': LayoutTopNav;
       'layout.yt-video': LayoutYtVideo;

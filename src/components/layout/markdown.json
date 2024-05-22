@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_layout_markdowns",
+  "info": {
+    "displayName": "Markdown"
+  },
+  "options": {},
+  "attributes": {
+    "markdown": {
+      "type": "richtext"
+    }
+  }
+}
